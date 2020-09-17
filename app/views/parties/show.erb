@@ -2,5 +2,19 @@
 <h3> <%= @party.date %> </h3>
 <p>Budget: $<%= @party.budget %></p>
 
+<ul>
+    <% @party.snacks.each do |s| %>
+        <li>
+            <%= s.name %>
+            <ul>
+                <li>    
+                    <%= s.description    %>
+                </li>
+            </ul>
+            
+        </li>
+    <% end %>
+</ul>
+
 
 <%= link_to 'All Parties', parties_path %>
